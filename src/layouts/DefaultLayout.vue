@@ -12,6 +12,11 @@
                         <font-awesome-icon icon="fa-solid fa-vials"/>
                     </router-link>
                 </li>
+                <li class="mb-2">
+                    <router-link to="/event/detect" class="block py-2 px-4 hover:bg-gray-200 rounded">
+                        <font-awesome-icon icon="fa-solid fa-bell"/>
+                    </router-link>
+                </li>
             </ul>
         </div>
         <div class="flex-1 p-3">

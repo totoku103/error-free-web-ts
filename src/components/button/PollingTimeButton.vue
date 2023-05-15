@@ -21,20 +21,19 @@ const defaultButtonData: buttonData[] = [
     {label: "||", value: "pause"}
 ];
 
+const emit = defineEmits<{
+    (event: 'onClick', data: object): void
+}>()
+
 const addChangeEvent = () => {
     const elementById: HTMLElement = document
         .getElementById("smartPollingTimeButton")!;
     elementById.addEventListener("change", (event) => {
         const detail = (event as CustomEvent).detail;
-        emit('clickCallback', detail)
+        emit('onClick', detail)
     });
 }
 
-const emit = defineEmits({
-    clickCallback(payload) {
-        console.log(payload)
-    }
-})
 
 onMounted(() => {
     addChangeEvent()

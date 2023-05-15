@@ -1,12 +1,11 @@
 <template>
-    <polling-time-button @clickCallback="clickCallback"/>
+    <polling-time-button @onClick="onClick"/>
 </template>
 
 <script setup lang="ts">
-import {defineComponent} from 'vue'
-import PollingTimeButton from "../components/buttons/PollingTimeButton.vue"
+import PollingTimeButton from "../components/button/PollingTimeButton.vue"
 
-function clickCallback(event: Event) {
+function onClick(event: Event) {
     console.log(event)
 }
 

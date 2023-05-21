@@ -26,11 +26,10 @@ const emit = defineEmits<{
 }>()
 
 const addChangeEvent = () => {
-    const elementById: HTMLElement = document
-        .getElementById("smartPollingTimeButton")!;
+    const elementById: HTMLElement = document.getElementById("smartPollingTimeButton")!;
     elementById.addEventListener("change", (event) => {
         const detail = (event as CustomEvent).detail;
-        emit('onClick', detail)
+        emit('onClick', detail.values[0])
     });
 }
 

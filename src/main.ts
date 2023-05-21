@@ -6,13 +6,12 @@ import Routes from './routes'
 
 // smart html element
 import 'smart-webcomponents/source/styles/smart.default.css';
+import "smart-webcomponents/source/modules/smart.element.js"
 import "smart-webcomponents/source/modules/smart.grid.js";
-import "smart-webcomponents/source/modules/smart.button";
-import "smart-webcomponents/source/modules/smart.buttongroup";
-import "smart-webcomponents/source/modules/smart.editor";
-import "smart-webcomponents/source/modules/smart.tabs";
-import "smart-webcomponents/source/modules/smart.datetimepicker";
-import "smart-webcomponents/source/modules/smart.progressbar";
+import "smart-webcomponents/source/modules/smart.button.js";
+import "smart-webcomponents/source/modules/smart.buttongroup.js";
+import "smart-webcomponents/source/modules/smart.progressbar.js";
+
 
 //awesome
 import {library} from "@fortawesome/fontawesome-svg-core";

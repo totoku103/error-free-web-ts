@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-
 import {Grid} from "smart-webcomponents/source/typescript/smart.elements";
 import {onMounted} from "vue";
 

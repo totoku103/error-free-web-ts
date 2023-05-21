@@ -7,11 +7,16 @@
 </template>
 
 <script setup lang="ts">
-import {ref, Ref, defineEmits, withDefaults} from 'vue'
 
-const min = 0;
-const max = 100;
-let timer = null;
+import {ProgressBar} from "smart-webcomponents/source/typescript/smart.elements.d.ts"
+import "smart-webcomponents/source/styles/default/smart.progressbar.css"
+import "smart-webcomponents/source/typescript/smart.progressbar.d.ts"
+import {ref, Ref, defineEmits, withDefaults, watch,} from 'vue'
+
+const min: number = 0;
+const max: number = 100;
+let timer: number = 0;
+const progressbar: Ref<HTMLElement | null> = ref(null);
 
 interface Props {
     refreshCycle: number,
@@ -25,11 +30,39 @@ const emits = defineEmits<{
     (event: 'complete'): void
 }>();
 
-function onChange(event: Event) {
+watch(() => props.refreshCycle,
+    () => {
+        if (timer !== 0) clearInterval(timer);
+        else setTimer();
+    });
+
+function onChange(event: Event): void {
     const detail = (event as CustomEvent).detail;
     if (detail.value >= max) {
         emits('complete');
     }
+}
+
+// function getValue(): number {
+//     if(!progressbar) {
+//         return progressbar.value;
+//     }
+// }
+
+// function setValue(value: number): void {
+//     progressbar.value = value;
+// }
+
+
+function setTimer() {
+    const appendValue = 100 / (props.refreshCycle / 1000);
+    const obj = progressbar.value;
+    if (obj !== null) {
+        const currentValue = obj?.value;
+
+
+    }
+    // }, 1000)
 }
 
 // export default {
